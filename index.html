@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>photopix</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <header>
+       <nav>
+        <div class="logo">
+            Photo<span>pi</span>X
+        </div>
+        <div class="menu">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Gallery</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="icon">
+            <input type="search" placeholder="search" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="#"> Login</a>
+        </div>
+       </nav> 
+       <section class="h-text">
+        <i class="fa fa-camera"></i>
+        <h1>Capturing the moments that captivate your heart.</h1>
+        <input type="text" name="" placeholder="Search here...">
+       <button> <i class="fa-solid fa-magnifying-glass"></i></button>
+       </section>
+    </header>
+
+    <section class="filter-gallery">
+        <div class="portfolio-menu">
+            <ul>
+                <li class="active" data-filter="*" >All</li>
+                <li data-filter=".Nature" >Nature</li>
+                <li data-filter=".Fashion" >Fashion</li>
+                <li data-filter=".Wedding" >Wedding</li>
+            </ul>
+        </div>
+
+        <div class="portfolio-item">
+            <div class="item Nature">
+                <img src="./imsges/Nature1.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Nature">
+                <img src="./imsges/Nature2.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Nature">
+                <img src="./imsges/Nature3.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Wedding">
+                <img src="./imsges/wedding1.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Wedding">
+                <img src="./imsges/wedding2.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Wedding">
+                <img src="./imsges/wedding3.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Fashion">
+                <img src="./imsges/fashion1.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Fashion">
+                <img src="./imsges/fashion2.jpg" width="100" height="100" alt="">
+            </div>
+            <div class="item Fashion">
+                <img src="./imsges/fashion3.jpg" width="100" height="100" alt="">
+            </div>
+        </div>
+
+    </section>
+    <section class="member">
+        <div class="member-info">
+            <h1>Our <span>Information</span></h1>
+            <p>What our member says</p>
+        </div>
+        <div class="member-card">
+            <img src="./imsges/maria sharapuva.jpg" width="100%" alt="">
+            <p>From rajasthan, doing gym is for healthy life. It helps our body to fit. It realease stress 
+                from our mind. From rajasthan,doing gym is good for healthy life. It helps our body to fit. It realease stress from our mind.
+            </p>
+            <h2>* Maria Sharapova</h2>
+            <img src="./imsges/whatapp1.jpg" alt="" width="50">
+            <img src="./imsges/facebook1.jpg" alt="" width="100">
+            <img src="./imsges/intagram.jpg" alt="" width="50">
+            <img src="./imsges/twiter.jpg" alt="" width="50">
+        </div>
+        <div class="m-images">
+            <img src="./imsges/natural1.jpg" alt="" >
+            <img src="./imsges/natural2.jpg" alt="" >
+            <img src="./imsges/natural3.jpg" alt="" >
+            <img src="./imsges/natural4.jpg" alt="" >
+            <img src="./imsges/natural5.jpg" alt="" >
+            <img src="./imsges/natural6.jpg" alt="" >
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="newsletter">
+            <div>
+                <h2>Subscribe our newsletter</h2>
+                <p>We're a team of non-cynics who trully care for our work.</p>
+            </div>
+            <div class="ntext">
+                <label for=""> 
+                    <input type="text" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </label>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script type="text/javascript">
+        $('.portfolio-item').isotope({
+        // options
+        itemSelector: '.item',
+        layoutMode: 'fitRows'
+        });
+            $('.portfolio-menu ul li').click(function(){
+            $('.portfolio-menu ul li ').removeClass('active');
+            $(this).addClass('active');
+            
+            //filter images
+            var  selector=$(this).attr('data-filter');
+            $('.portfolio-item').isotope({filter:selector});
+            return false;
+            });
+    </script>
+</body>
+</html>
